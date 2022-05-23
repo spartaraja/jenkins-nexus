@@ -4,7 +4,7 @@ pipeline {
     environment {
         NEXUS_VERSION = "nexus3"
         NEXUS_PROTOCOL = "http"
-        NEXUS_URL = "localhost:8081"
+        NEXUS_URL = "1851-2401-4900-275f-461d-219d-ad5c-6cb4-fb06.in.ngrok.io"
         NEXUS_REPOSITORY = "newrepo"
         NEXUS_CREDENTIAL_ID = "admin"
     }
@@ -36,7 +36,7 @@ pipeline {
                         nexusArtifactUploader(
                             nexusVersion: nexus3,
                             protocol: http,
-                            nexusUrl: localhost:8081,
+                            nexusUrl: "1851-2401-4900-275f-461d-219d-ad5c-6cb4-fb06.in.ngrok.io",
                             groupId: pom.com.mycompany.app,
                             version: pom.1.0-SNAPSHOT,
                             repository: newrepo,
