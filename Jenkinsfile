@@ -23,13 +23,7 @@ pipeline {
                 
             }
         }
-        stage("Sonar") {
-            steps {
-               
-                    bat "mvn install sonar:sonar"
-                
-            }
-        }
+        
         stage("Publish to Nexus Repository Manager") {
             steps {
                 script {
