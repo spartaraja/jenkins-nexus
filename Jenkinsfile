@@ -26,7 +26,7 @@ pipeline {
         stage("Sonar") {
             steps {
                
-                    bat "mvn deploy sonar:sonar"
+                    bat "mvn install sonar:sonar"
                 
             }
         }
