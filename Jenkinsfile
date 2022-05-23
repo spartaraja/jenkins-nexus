@@ -23,7 +23,7 @@ pipeline {
                 
             }
         }
-        stage("Maven Build") {
+        stage("Sonar") {
             steps {
                
                     bat "mvn deploy sonar:sonar"
