@@ -34,19 +34,19 @@ pipeline {
                     if(artifactExists) {
                         echo "*** File: ${artifactPath}, group: ${pom.groupId}, packaging: ${pom.packaging}, version ${pom.version}";
                         nexusArtifactUploader(
-                            nexusVersion: nexus3,
-                            protocol: http,
-                            nexusUrl: "1851-2401-4900-275f-461d-219d-ad5c-6cb4-fb06.in.ngrok.io",
-                            groupId: pom.com.mycompany.app,
-                            version: pom.1.0-SNAPSHOT,
-                            repository: newrepo,
-                            credentialsId: admin,
+                            nexusVersion: 'nexus3',
+                            protocol: 'http',
+                            nexusUrl: '1851-2401-4900-275f-461d-219d-ad5c-6cb4-fb06.in.ngrok.io',
+                            groupId: 'pom.com.mycompany.app',
+                            version: 'pom.1.0-SNAPSHOT',
+                            repository: 'newrepo',
+                            credentialsId: 'admin',
                             artifacts: [
-                                [artifactId: pom.my-app,
+                                [artifactId: 'pom.my-app',
                                 classifier: '',
                                 file: artifactPath,
                                 type: pom.packaging],
-                                [artifactId: pom.my-app,
+                                [artifactId: 'pom.my-app',
                                 classifier: '',
                                 file: "pom.xml",
                                 type: "pom"]
