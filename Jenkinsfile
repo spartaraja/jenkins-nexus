@@ -12,7 +12,7 @@ pipeline {
         stage("Clone code from GitHub") {
             steps {
                 script {
-                    git branch: 'main', credentialsId: 'git_test', url: 'https://github.com/spartaraja/jenkins-nexus.git';
+                    git branch: 'main', credentialsId: 'git_test', url: 'https://github.com/spartaraja/jenkins-nexus';
                 }
             }
         }
