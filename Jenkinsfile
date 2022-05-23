@@ -3,8 +3,8 @@ pipeline {
     
     environment {
         NEXUS_VERSION = "nexus3"
-        NEXUS_PROTOCOL = "https"
-        NEXUS_URL = "1851-2401-4900-275f-461d-219d-ad5c-6cb4-fb06.in.ngrok.io"
+        NEXUS_PROTOCOL = "http"
+        NEXUS_URL = "localhost:8081"
         NEXUS_REPOSITORY = "newrepo"
         NEXUS_CREDENTIAL_ID = "admin"
     }
@@ -34,9 +34,9 @@ pipeline {
                     if(artifactExists) {
                         echo "*** File: ${artifactPath}, group: ${pom.groupId}, packaging: ${pom.packaging}, version ${pom.version}";
                         nexusArtifactUploader(
-                            nexusVersion: NEXUS_VERSION,
-                            protocol: https,
-                            nexusUrl: 1851-2401-4900-275f-461d-219d-ad5c-6cb4-fb06.in.ngrok.io,
+                            nexusVersion: 3.38.1,
+                            protocol: http,
+                            nexusUrl: localhost:8081,
                             groupId: pom.com.mycompany.app,
                             version: pom.1.0-SNAPSHOT,
                             repository: newrepo,
