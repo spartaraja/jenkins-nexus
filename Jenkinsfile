@@ -4,7 +4,7 @@ pipeline {
     environment {
         NEXUS_VERSION = "nexus3"
         NEXUS_PROTOCOL = "https"
-        NEXUS_URL = "1851-2401-4900-275f-461d-219d-ad5c-6cb4-fb06.in.ngrok.io/"
+        NEXUS_URL = "1851-2401-4900-275f-461d-219d-ad5c-6cb4-fb06.in.ngrok.io"
         NEXUS_REPOSITORY = "newrepo"
         NEXUS_CREDENTIAL_ID = "admin"
     }
