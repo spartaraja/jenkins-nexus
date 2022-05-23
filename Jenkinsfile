@@ -3,7 +3,7 @@ pipeline {
     
     environment {
         NEXUS_VERSION = "nexus3"
-        NEXUS_PROTOCOL = "http"
+        NEXUS_PROTOCOL = "https"
         NEXUS_URL = "1851-2401-4900-275f-461d-219d-ad5c-6cb4-fb06.in.ngrok.io"
         NEXUS_REPOSITORY = "newrepo"
         NEXUS_CREDENTIAL_ID = "admin"
@@ -11,16 +11,16 @@ pipeline {
     stages {
         stage("Clone code from GitHub") {
             steps {
-                script {
+                
                     git branch: 'main', credentialsId: 'git_test', url: 'https://github.com/spartaraja/jenkins-nexus.git';
-                }
+                
             }
         }
         stage("Maven Build") {
             steps {
-                script {
-                    sh "mvn package -DskipTests=true"
-                }
+               
+                    bat "mvn package"
+                
             }
         }
         stage("Publish to Nexus Repository Manager") {
