@@ -1,14 +1,12 @@
 pipeline {
     agent any
-    tools {
-        maven "MAVEN"
-    }
+    
     environment {
         NEXUS_VERSION = "nexus3"
-        NEXUS_PROTOCOL = "http"
-        NEXUS_URL = "159.223.191.140:8081"
-        NEXUS_REPOSITORY = "java-app"
-        NEXUS_CREDENTIAL_ID = "NEXUS_CRED"
+        NEXUS_PROTOCOL = "https"
+        NEXUS_URL = "1851-2401-4900-275f-461d-219d-ad5c-6cb4-fb06.in.ngrok.io/"
+        NEXUS_REPOSITORY = "newrepo"
+        NEXUS_CREDENTIAL_ID = "admin"
     }
     stages {
         stage("Clone code from GitHub") {
@@ -37,18 +35,18 @@ pipeline {
                         echo "*** File: ${artifactPath}, group: ${pom.groupId}, packaging: ${pom.packaging}, version ${pom.version}";
                         nexusArtifactUploader(
                             nexusVersion: NEXUS_VERSION,
-                            protocol: NEXUS_PROTOCOL,
-                            nexusUrl: NEXUS_URL,
-                            groupId: pom.groupId,
-                            version: pom.version,
-                            repository: NEXUS_REPOSITORY,
-                            credentialsId: NEXUS_CREDENTIAL_ID,
+                            protocol: https,
+                            nexusUrl: 1851-2401-4900-275f-461d-219d-ad5c-6cb4-fb06.in.ngrok.io,
+                            groupId: pom.com.mycompany.app,
+                            version: pom.1.0-SNAPSHOT,
+                            repository: newrepo,
+                            credentialsId: admin,
                             artifacts: [
-                                [artifactId: pom.artifactId,
+                                [artifactId: pom.my-app,
                                 classifier: '',
                                 file: artifactPath,
                                 type: pom.packaging],
-                                [artifactId: pom.artifactId,
+                                [artifactId: pom.my-app,
                                 classifier: '',
                                 file: "pom.xml",
                                 type: "pom"]
